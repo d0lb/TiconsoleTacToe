@@ -22,16 +22,27 @@ void initBoard(char board[3][3]){
 void displayBoard(const char board[3][3]){
     clearTerminal();
     printf("\n");
+    printf(" -- -- --\n");
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            printf(" %c", board[i][j]);
+            printf("| %c", board[i][j]);
         }
+        printf(" |");
         printf(" \n");
     }
+    printf(" -- -- --\n");
 }
 
-void setASymbol(char board[3][3], int num1, int num2, char symbol){
-    board[num1][num2] = symbol;
+void setASymbol(char board[3][3], char symbol){
+    int num1, num2;
+    scanf(" %d %d", &num1, &num2);
+    if(board[num1][num2] == 'X' || board[num1][num2] == 'O' || num1 > 2 || num1 < 0 || num2 > 2 || num2 < 0){
+        printf("Please enter the correct coordinates!\n");
+        setASymbol(board, symbol);
+        return;
+    }else{
+        board[num1][num2] = symbol;
+    }
 }
 
 char checkWinConditions(const char board[3][3], const int steps){

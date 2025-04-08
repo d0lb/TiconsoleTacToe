@@ -5,10 +5,8 @@
 bool isRunning = true;
 char board[3][3];
 
-int num1, num2;
 int steps;
 int main(){
-    printf("Welcome to multiplayer console TicTacToe Game!");
     while (isRunning){
         initBoard(board);
         steps = 0;
@@ -17,8 +15,7 @@ int main(){
             while(steps < 9){
 
                 printf("X's turn! \n");
-                scanf(" %d %d", &num1, &num2);
-                setASymbol(board, num1, num2, 'X');
+                setASymbol(board, 'X');
                 steps++;
                 displayBoard(board);
                 if(checkWinConditions(board, steps) == 'X'){
@@ -34,8 +31,7 @@ int main(){
                 //#################################
 
                 printf("O's turn! \n");
-                scanf(" %d %d", &num1, &num2);
-                setASymbol(board, num1, num2, 'O');
+                setASymbol(board,'O');
                 steps++;
                 displayBoard(board);
 
