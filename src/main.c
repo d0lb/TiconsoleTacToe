@@ -10,6 +10,7 @@ int steps;
 int main(){
     printf("Welcome to multiplayer console TicTacToe Game!");
     while (isRunning){
+        initBoard(board);
         steps = 0;
         printf("Starting the game... \n You both will have to enter two numbers,that means coordinates of a TicTacToe board (Example: 1 1 --- makes a symbol in the center) \n");
             
